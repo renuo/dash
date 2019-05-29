@@ -8,7 +8,6 @@ function checkRemoteVersion(repoUrl, localVersion) {
   var request = new XMLHttpRequest();
   request.open("GET", repoUrl);
   request.setRequestHeader('If-None-Match', etag);
-  request.send();
   request.onreadystatechange = function () {
     if (this.readyState == 4 && this.status == 200) {
       etag = request.getResponseHeader('ETag');
@@ -16,11 +15,12 @@ function checkRemoteVersion(repoUrl, localVersion) {
       var remoteVersion = githubBranch.commit.sha;
       if(remoteVersion !== localVersion) {
         window.localStorage.setItem('version', remoteVersion);
-        location.reload(true);
+        window.location.reload(true);
       }
     }
   };
+  request.send();
 }
 
 setInterval(checkRemoteVersion, 10000, repoUrl, localVersion);
-setInterval(location.reload, 86400000, true);
+setInterval(window.location.reload, 86400000, true);
