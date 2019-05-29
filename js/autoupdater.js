@@ -22,5 +22,5 @@ function checkRemoteVersion(repoUrl, localVersion) {
   request.send();
 }
 
-setInterval(checkRemoteVersion, 10000, repoUrl, localVersion);
+setInterval(checkRemoteVersion, 5000, repoUrl, localVersion);
 setInterval(window.location.reload, 86400000, true);
