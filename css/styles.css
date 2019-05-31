@@ -1,10 +1,10 @@
-body {
-  display: flex;
-  min-height: 100vh;
-  flex-direction: column;
+main section {
+  float: left;
+  overflow: auto;
 }
 
-main {
-  flex: 1;
-  display: flex;
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
 }
