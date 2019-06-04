@@ -5,10 +5,12 @@ var etag = undefined;
 document.getElementById('version').innerHTML = "Dashboard Version: " + localVersion;
 
 function checkRemoteVersion(repoUrl, localVersion) {
+  console.log('Checking Github master…');
   var request = new XMLHttpRequest();
   request.open("GET", repoUrl);
   request.setRequestHeader('If-None-Match', etag);
   request.onreadystatechange = function () {
+    console.log('Github master status: ' + this.status);
     if (this.readyState == 4 && this.status == 200) {
       etag = request.getResponseHeader('ETag');
       var githubBranch = JSON.parse(this.responseText);
