@@ -1,5 +1,6 @@
 main section {
   float: left;
+  margin: 2px;
 }
 
 .clearfix::after {
