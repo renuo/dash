@@ -1,6 +1,35 @@
+html {
+  font-family: Montserrat,sans-serif;
+  background-color: #27d79d;
+  background-image: url('../images/header-gray.svg');
+}
+
+body {
+  padding: 3rem;
+}
+h1 {
+  font-size: 3.5rem;
+}
+
+h2 {
+  font-size: 2.5rem;
+}
+
+h1, h2 {
+  font-weight: 600;
+  color: white;
+}
+
 main section {
   float: left;
   margin: 2px;
+  background: white;
+  padding: 3rem;
+  margin: 1rem;
+}
+
+main section h2 {
+  color: #26d79d;
 }
 
 .clearfix::after {
@@ -16,4 +45,8 @@ footer {
   width: 100%;
   background-color: white;
   font-size: 12px;
+}
+
+iframe {
+  border: none;
 }
